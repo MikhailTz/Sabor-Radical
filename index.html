@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Radical | A Fábrica de Salgados de Campo Grande</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ffffff; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Hero Section - Impacto Visual */
+        .hero { 
+            height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), #000), url('hero-salgados.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; border-bottom: 2px solid #ff4500;
+        }
+        .logo-img { max-width: 250px; height: auto; margin-bottom: 20px; }
+        .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .hero p { color: #ff4500; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* Secção de Chamada para Acção */
+        .order-section { text-align: center; padding: 80px 20px; background: #050505; }
+        .order-section h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; }
+        .order-section p { color: #888; max-width: 600px; margin: 0 auto 40px; }
+
+        .btn-order { 
+            display: inline-block; background: #ff4500; color: #fff; padding: 20px 50px; 
+            border-radius: 4px; font-weight: 900; text-decoration: none; text-transform: uppercase;
+            letter-spacing: 2px; transition: 0.3s; font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.2);
+        }
+        .btn-order:hover { background: #e63e00; transform: scale(1.05); }
+
+        /* Diferenciais (Higiene e Qualidade) */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 60px 0; }
+        .feature-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 4px; text-align: center; }
+        .feature-card h3 { color: #ff4500; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; }
+        .feature-card p { color: #666; font-size: 0.9rem; }
+
+        /* Footer */
+        .footer { border-top: 1px solid #111; padding: 40px 0; text-align: center; margin-top: 80px; }
+        .footer p { font-size: 0.8rem; color: #444; }
+        .location { color: #888; margin-bottom: 20px; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="logo-sabor.png" alt="Sabor Radical" class="logo-img" onerror="this.style.display='none'">
+        <h1>Sabor Radical</h1>
+        <p>Excelência em Salgados | Produção Industrial</p>
+    </section>
+
+    <div class="container">
+        <section class="order-section">
+            <h2>Pronto para elevar o nível do seu evento ou negócio?</h2>
+            <p>Aceda ao nosso sistema de pedidos online para entregas rápidas em Campo Grande e região.</p>
+            <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-order">Peça Aqui Agora</a>
+        </section>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Padrão de Higiene</h3>
+                <p>Processos rigorosos de limpeza e manipulação, garantindo a segurança alimentar em cada unidade produzida.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Logística Eficiente</h3>
+                <p>Produção organizada para atender desde pequenos pedidos até grandes volumes para revenda e eventos.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Sabor Autêntico</h3>
+                <p>Receitas exclusivas com ingredientes seleccionados para proporcionar a melhor experiência de sabor.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p class="location">Campo Grande, Rio de Janeiro</p>
+            <p>© 2026 Sabor Radical | Desenvolvido por Mikhail Ayache</p>
+        </footer>
+    </div>
+
+</body>
+</html>
