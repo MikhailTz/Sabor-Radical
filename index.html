@@ -3,187 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor Radical | Fábrica de Salgados em Campo Grande</title>
+    <title>Sabor Radical | O Verdadeiro Sabor de Campo Grande</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
         
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: #000000; color: #ffffff; line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #0a0a0a; color: #ffffff; line-height: 1.6; padding-bottom: 60px; }
         
-        /* Cores Principais */
+        /* Cores da Marca */
         :root {
-            --primary: #ff4500; /* Laranja/Vermelho que dá fome */
-            --dark: #0a0a0a;
-            --gray: #1a1a1a;
-            --text-light: #aaaaaa;
+            --primary: #ff4500; /* Laranja/Vermelho (Fome/Destaque) */
+            --card-bg: #140d0d; /* Fundo vermelho super escuro para os cards */
+            --border: #2a1a1a;
+            --text-muted: #aaaaaa;
         }
 
-        /* Menu de Navegação */
-        .navbar {
-            position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.95);
-            padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--gray); z-index: 1000;
-        }
-        .nav-logo { height: 40px; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .nav-btn { background: var(--primary); padding: 8px 20px; border-radius: 4px; color: #fff !important; }
-        .nav-btn:hover { background: #e63e00; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; padding: 15px; }
-            .nav-links { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+        /* HEADER & PERFIL (Estilo Linktree Premium) */
+        .profile-section { text-align: center; padding: 60px 0 30px; }
+        .profile-img { 
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover; 
+            border: 3px solid var(--primary); margin-bottom: 15px; background: #fff;
         }
+        .profile-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .profile-user { color: var(--primary); font-weight: 600; font-size: 1rem; margin-bottom: 25px; }
 
-        /* Seção Banner Principal (Início) */
-        .hero { 
-            height: 90vh; margin-top: 60px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('banner-principal.jpg');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 0 20px;
+        /* LINKS RÁPIDOS */
+        .links-container { display: flex; flex-direction: column; gap: 15px; margin-bottom: 60px; }
+        .btn-link {
+            display: flex; align-items: center; justify-content: center; position: relative;
+            background: #1a1a1a; color: #ffffff; text-decoration: none; padding: 18px 20px;
+            border-radius: 12px; font-weight: 600; font-size: 1rem; transition: 0.3s;
+            border: 1px solid #333;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; margin-bottom: 10px; }
-        .hero h2 { color: var(--primary); font-weight: 700; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
-        .hero p { max-width: 600px; color: var(--text-light); margin-bottom: 40px; font-size: 1.1rem; }
+        .btn-link:hover { background: #2a2a2a; border-color: #555; transform: translateY(-2px); }
+        .btn-link .icon { position: absolute; left: 20px; font-size: 1.2rem; }
         
-        .btn-large {
-            display: inline-block; background: var(--primary); color: #fff; padding: 18px 40px; 
-            border-radius: 4px; font-weight: 900; text-decoration: none; text-transform: uppercase;
-            letter-spacing: 1px; transition: 0.3s; font-size: 1.1rem;
+        /* Botão Principal em Destaque */
+        .btn-main { background: var(--primary); color: #fff; border: none; font-weight: 800; font-size: 1.1rem; }
+        .btn-main:hover { background: #e63e00; box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3); border-color: transparent; }
+
+        /* VITRINE DE PRODUTOS */
+        .section-title { 
+            font-size: 1.5rem; font-weight: 900; text-transform: uppercase; 
+            text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--border); 
+            padding-bottom: 15px;
         }
-        .btn-large:hover { background: #fff; color: #000; transform: scale(1.05); }
-
-        /* Estrutura das Seções */
-        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 40px; text-transform: uppercase; border-left: 5px solid var(--primary); padding-left: 15px; }
-
-        /* Sobre a Fábrica */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .about-text p { margin-bottom: 20px; color: var(--text-light); font-size: 1.05rem; }
-        .about-img { width: 100%; border-radius: 8px; border: 1px solid var(--gray); }
         
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
-
-        /* Produtos */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: var(--dark); border: 1px solid var(--gray); border-radius: 8px; overflow: hidden; text-align: center; transition: 0.3s; }
-        .product-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; }
-        .product-info { padding: 30px; }
-        .product-info h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--primary); }
-        .product-info p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px; }
-
-        /* Atacado e Varejo Banner */
-        .wholesale-banner { 
-            background: var(--dark); padding: 60px 20px; text-align: center; 
-            border-top: 1px solid var(--gray); border-bottom: 1px solid var(--gray); margin-top: 40px;
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .product-card { 
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; 
+            overflow: hidden; display: flex; flex-direction: column; transition: 0.3s;
         }
-        .wholesale-banner h2 { font-size: 2rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; }
-        .wholesale-banner p { color: var(--text-light); max-width: 700px; margin: 0 auto 30px; }
-
-        /* Contato e Lojas */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .contact-info { background: var(--dark); padding: 40px; border-radius: 8px; border: 1px solid var(--gray); }
-        .contact-info h3 { color: var(--primary); margin-bottom: 15px; }
-        .contact-info p { margin-bottom: 10px; color: var(--text-light); }
+        .product-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .product-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 2px solid var(--border); }
         
-        /* Footer */
-        footer { background: #000; padding: 40px 20px; text-align: center; border-top: 1px solid var(--gray); margin-top: 60px; }
-        footer p { color: #555; font-size: 0.85rem; }
+        .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; color: #fff; line-height: 1.3; }
+        .product-price { font-size: 1.2rem; font-weight: 900; color: var(--primary); margin-bottom: 15px; }
+        .product-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+        
+        .btn-buy { 
+            background: #222; color: #fff; text-align: center; text-decoration: none; 
+            padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;
+            border: 1px solid #444; transition: 0.3s;
+        }
+        .btn-buy:hover { background: #fff; color: #000; }
+
+        /* RODAPÉ */
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <img src="logo-sabor.png" alt="Sabor Radical" class="nav-logo" onerror="this.style.display='none'">
-        <div class="nav-links">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">A Fábrica</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#atacado">Atacado</a>
-            <a href="/peca-aqui" class="nav-btn">Peça Aqui</a>
+    <div class="container">
+        
+        <div class="profile-section">
+            <img src="logo-sabor.png" alt="Sabor Radical" class="profile-img" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=SR'">
+            <h1 class="profile-title">Sabor Radical</h1>
+            <p class="profile-user">@saborradical</p>
         </div>
-    </nav>
 
-    <header id="inicio" class="hero">
-        <h2>Fabricação Própria</h2>
-        <h1>O Verdadeiro Sabor <br>de Campo Grande</h1>
-        <p>Mais de [Inserir Tempo] anos no mercado garantindo a melhor qualidade e crocância em salgados para festas, lanchonetes e revenda.</p>
-        <a href="/peca-aqui" class="btn-large">Fazer Pedido Agora</a>
-    </header>
-
-    <section id="sobre" class="section">
-        <h2 class="section-title">Conheça a Sabor Radical</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Nascida em Campo Grande, a <strong>Sabor Radical</strong> atua com foco e determinação no ramo de produtos alimentícios. A nossa base é a excelência na qualidade, através de processos modernos e total controle de higiene.</p>
-                <p>Fabricamos os nossos próprios produtos com matéria-prima selecionada, garantindo salgados que são referência em sabor na Zona Oeste.</p>
-                <p>Possuímos maquinário industrial e equipe preparada para atender grandes demandas de eventos e fornecimento para atacadistas.</p>
-            </div>
-            <img src="sobre-fabrica.jpg" alt="Estrutura da Fábrica" class="about-img" onerror="this.style.display='none'">
+        <div class="links-container">
+            <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-link btn-main">
+                <span class="icon">🍔</span> Cardápio Digital / Pedido Online
+            </a>
+            
+            <a href="https://wa.me/SEUNUMERO" class="btn-link" target="_blank">
+                <span class="icon">💬</span> WhatsApp
+            </a>
+            
+            <a href="https://instagram.com/saborradical" class="btn-link" target="_blank">
+                <span class="icon">📸</span> Instagram
+            </a>
+            
+            <a href="#" class="btn-link">
+                <span class="icon">⭐</span> Avalie sua experiência
+            </a>
+            
+            <a href="https://maps.google.com/?q=R.+Firmino+Moreira,+43+-+Campo+Grande,+Rio+de+Janeiro" class="btn-link" target="_blank">
+                <span class="icon">📍</span> Localização (R. Firmino Moreira, 43)
+            </a>
+            
+            <a href="#" class="btn-link">
+                <span class="icon">📝</span> Pesquisa de Satisfação
+            </a>
         </div>
-    </section>
 
-    <section id="produtos" class="section">
-        <h2 class="section-title">Nossa Linha de Produtos</h2>
+        <h2 class="section-title">Nossos Destaques</h2>
         <div class="products-grid">
             
             <div class="product-card">
-                <img src="produto-festa.jpg" alt="Salgados de Festa" onerror="this.style.display='none'">
+                <img src="fritos.jpg" alt="Salgadinhos Fritos" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Salgados+Fritos'">
                 <div class="product-info">
-                    <h3>Salgados de Festa</h3>
-                    <p>Coxinhas, bolinhas de queijo, risoles e kibe. Os clássicos que não podem faltar no seu evento, fritos na hora com a máxima crocância.</p>
-                    <a href="/peca-aqui" class="nav-btn">Ver Preços</a>
+                    <h3 class="product-title">Cento Salgadinhos de Festa Fritos</h3>
+                    <p class="product-desc">Salgadinhos crocantes e saborosos, fritos na hora. Ideal para qualquer evento.</p>
+                    <p class="product-price">A partir de R$ 50,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
 
             <div class="product-card">
-                <img src="produto-revenda.jpg" alt="Salgados Congelados" onerror="this.style.display='none'">
+                <img src="congelados.jpg" alt="Salgadinhos Congelados" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Congelados'">
                 <div class="product-info">
-                    <h3>Congelados / Revenda</h3>
-                    <p>Pacotes fechados para você que tem lanchonete ou bar e deseja revender um produto de altíssima saída e margem de lucro.</p>
-                    <a href="#contato" class="nav-btn">Falar com a Fábrica</a>
+                    <h3 class="product-title">Cento Salgadinhos de Festa Congelados</h3>
+                    <p class="product-desc">Pacotes congelados prontos para fritar. Praticidade e sabor garantidos.</p>
+                    <p class="product-price">A partir de R$ 40,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="lanchonete.jpg" alt="Padrão Lanchonete" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Lanchonete'">
+                <div class="product-info">
+                    <h3 class="product-title">Salgados (Padrão Lanchonete)</h3>
+                    <p class="product-desc">Tamanho especial para revenda. A partir de 20 unidades, misture os sabores livremente.</p>
+                    <p class="product-price">A partir de R$ 60,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="camarao.jpg" alt="Camarão Empanado" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Camarao'">
+                <div class="product-info">
+                    <h3 class="product-title">Bandeja C/20 Camarão Empanado</h3>
+                    <p class="product-desc">Camarões selecionados com empanamento premium. Sabor inconfundível.</p>
+                    <p class="product-price">A partir de R$ 25,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assados.jpg" alt="Mini Assados" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Assados'">
+                <div class="product-info">
+                    <h3 class="product-title">Cento Salgadinhos de Festa Assados</h3>
+                    <p class="product-desc">Formado por 5 bandejas com 20 unidades cada. Escolha seus sabores favoritos.</p>
+                    <p class="product-price">A partir de R$ 50,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="trancado.jpg" alt="Trançado Recheado" class="product-img" onerror="this.src='https://via.placeholder.com/400x300/2a1a1a/555555?text=Trancado'">
+                <div class="product-info">
+                    <h3 class="product-title">Bandeja C/1 Trançado Recheado</h3>
+                    <p class="product-desc">Massa macia e recheio abundante. Ideal para lanches rápidos.</p>
+                    <p class="product-price">A partir de R$ 8,00</p>
+                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <section id="atacado" class="wholesale-banner">
-        <h2>Vendas no Atacado e Varejo</h2>
-        <p>Não importa o tamanho da sua fome ou do seu negócio. Fazemos entregas para o consumidor final (varejo) matar a vontade, e temos tabelas especiais com entrega direto da fábrica para atacadistas e revendedores.</p>
-        <a href="#contato" class="btn-large" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Seja um Revendedor</a>
-    </section>
+        <footer>
+            <p>© 2026 Sabor Radical. Indústria e Comércio de Alimentos.</p>
+            <p>Desenvolvido por Mikhail Ayache</p>
+        </footer>
 
-    <section id="contato" class="section">
-        <h2 class="section-title">Fale Conosco</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>A Fábrica (Campo Grande)</h3>
-                <p>📍 <strong>Endereço:</strong> [Seu Endereço da Fábrica, ex: Rua X, Campo Grande / RJ]</p>
-                <p>🕒 <strong>Horário de Funcionamento:</strong> De Segunda a Sábado, das 08h às 18h.</p>
-                <br>
-                <p>📞 <strong>WhatsApp Revenda/Atacado:</strong> (21) 9XXXX-XXXX</p>
-                <p>📞 <strong>WhatsApp Delivery (Varejo):</strong> (21) 9XXXX-XXXX</p>
-            </div>
-            
-            <div class="contact-info" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                <h3 style="color: #fff;">Pronto para fazer o seu pedido?</h3>
-                <p>Entre em contacto via WhatsApp ou pelo nosso sistema digital e estaremos prontos para lhe atender rapidamente.</p>
-                <br>
-                <a href="/peca-aqui" class="btn-large">Acessar Cardápio Digital</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>Sabor Radical Indústria de Alimentos</strong></p>
-        <p>[Sua Razão Social] | CNPJ: [Seu CNPJ]</p>
-        <br>
-        <p>© 2026 Sabor Radical. Todos os direitos reservados. | Desenvolvido por Mikhail Ayache</p>
-    </footer>
+    </div>
 
 </body>
 </html>
