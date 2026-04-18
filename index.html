@@ -75,14 +75,14 @@
         .section-title { font-size: 2rem; font-weight: 900; text-transform: uppercase; text-align: center; margin: 80px 0 40px; color: #fff; position: relative; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 10px auto; border-radius: 2px; }
         
-        /* VITRINE DE PRODUTOS (Agora idêntica à Infraestrutura) */
+        /* VITRINE DE PRODUTOS */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; } 
         .product-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--border); }
         .product-card .product-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: 0.5s; filter: brightness(0.6); }
         .product-card:hover .product-img { transform: scale(1.05); filter: brightness(0.3); }
         
         .product-info { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.9)); pointer-events: none; }
-        .product-info * { pointer-events: auto; } /* Garante que o botão seja clicável sobre a imagem */
+        .product-info * { pointer-events: auto; } 
         
         .product-info h3 { font-size: 1.2rem; font-weight: 900; text-transform: uppercase; color: #fff; margin-bottom: 5px; }
         .product-price { font-size: 1.3rem; font-weight: 900; color: var(--primary); margin: 0 0 15px 0; }
@@ -103,6 +103,16 @@
         .mvv-card .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
         .mvv-card h4 { color: var(--primary); font-size: 1.3rem; text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
         .mvv-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* AVALIAÇÕES GOOGLE */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .review-card { background: #111; border: 1px solid var(--border); padding: 25px; border-radius: 16px; display: flex; flex-direction: column; }
+        .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .reviewer-avatar { width: 50px; height: 50px; border-radius: 50%; background: #333; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; font-weight: bold; color: #fff; }
+        .reviewer-info h4 { font-size: 1rem; color: #fff; margin-bottom: 2px; }
+        .review-stars { color: #fbbc04; font-size: 1.1rem; letter-spacing: 2px; } 
+        .review-text { font-size: 0.95rem; color: #ccc; line-height: 1.5; font-style: italic; }
+        .google-badge { align-self: flex-end; margin-top: 15px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; font-weight: 600; }
 
         /* REVENDA */
         .reseller-box {
@@ -128,6 +138,7 @@
         <a href="#destaques" class="nav-link">Destaques</a>
         <a href="#infraestrutura" class="nav-link">Infraestrutura</a>
         <a href="#principios" class="nav-link">Princípios</a>
+        <a href="#avaliacoes" class="nav-link">Avaliações</a>
         <a href="#revenda" class="nav-link">Revenda</a>
         <a href="#duvidas" class="nav-link">Dúvidas</a>
     </nav>
@@ -142,7 +153,7 @@
         </div>
 
         <div class="links-grid">
-            <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-link btn-main" style="grid-column: 1 / -1;">🛒 Cardápio & Pedido Online</a>
+            <a href="/cardapio" class="btn-link btn-main" style="grid-column: 1 / -1;">🛒 Cardápio & Pedido Online</a>
             <a href="https://wa.me/55219XXXXXX" class="btn-link">💬 WhatsApp Pedidos</a>
             <a href="https://instagram.com/saborradical" class="btn-link">📸 Instagram Oficial</a>
             <a href="https://goo.gl/maps/sua-localizacao" class="btn-link">📍 Como Chegar</a>
@@ -155,7 +166,7 @@
                 <div class="product-info">
                     <h3>Cento de Festa Fritos</h3>
                     <p class="product-price">R$ 50,00</p>
-                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                    <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
             
@@ -164,7 +175,7 @@
                 <div class="product-info">
                     <h3>Cento de Assados</h3>
                     <p class="product-price">R$ 50,00</p>
-                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                    <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
 
@@ -173,7 +184,7 @@
                 <div class="product-info">
                     <h3>Cento Congelados</h3>
                     <p class="product-price">R$ 40,00</p>
-                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                    <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
             
@@ -182,7 +193,7 @@
                 <div class="product-info">
                     <h3>Camarão Empanado (20un)</h3>
                     <p class="product-price">R$ 25,00</p>
-                    <a href="https://salgadoscomari.com.br/peca-aqui" class="btn-buy">Ver no Cardápio</a>
+                    <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
         </div>
@@ -223,6 +234,54 @@
                 <span class="icon">💎</span>
                 <h4>Valores</h4>
                 <p>Higiene inegociável, respeito absoluto aos prazos, inovação constante nos processos e transparência total com nossos clientes e parceiros.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="avaliacoes">O que dizem sobre nós</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar" style="background: #4285F4;">A</div>
+                    <div class="reviewer-info">
+                        <h4>Ana Clara</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">"Salgados maravilhosos! Encomendei para a festa do meu filho e chegou tudo quentinho, muito bem embalado e super crocante. Com certeza comprarei de novo."</p>
+                <div class="google-badge">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#888"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+                    Avaliação do Google
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar" style="background: #0F9D58;">M</div>
+                    <div class="reviewer-info">
+                        <h4>Marcos Silva</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">"Compro os pacotes congelados para revender na minha lanchonete e a saída é absurda. A qualidade é sempre padrão, higiene top e a entrega muito pontual. Parabéns à equipe!"</p>
+                <div class="google-badge">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#888"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+                    Avaliação do Google
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar" style="background: #F4B400;">R</div>
+                    <div class="reviewer-info">
+                        <h4>Roberta P.</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">"Melhor salgado de Campo Grande! Os assados são uma delícia, desmancham na boca. O atendimento via WhatsApp é super rápido e a fábrica é visivelmente muito limpa."</p>
+                <div class="google-badge">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#888"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+                    Avaliação do Google
+                </div>
             </div>
         </div>
 
