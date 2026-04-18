@@ -10,7 +10,8 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
-        html { scroll-padding-top: 80px; } 
+        /* Ajuste do scroll para não bugar quando clica no menu (agora que o menu não é fixo, pode ser menor) */
+        html { scroll-padding-top: 20px; } 
         body { background-color: #0a0a0a; color: #ffffff; line-height: 1.6; }
         
         :root {
@@ -21,10 +22,10 @@
             --text-muted: #888888;
         }
 
-        /* MENU MINIMALISTA DE NAVEGAÇÃO */
+        /* MENU DE NAVEGAÇÃO (Agora é relativo, ele rola junto com a página) */
         .top-nav {
-            position: sticky; top: 0; z-index: 1000; background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px); padding: 15px 20px; border-bottom: 1px solid var(--border);
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 20px; border-bottom: 1px solid var(--border);
             display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;
         }
         .nav-link {
@@ -32,7 +33,7 @@
             text-transform: uppercase; transition: 0.3s; letter-spacing: 1px;
         }
         .nav-link:hover { color: var(--primary); }
-        .nav-separator { color: #444; font-size: 0.9rem; user-select: none; } /* Barras separadoras */
+        .nav-separator { color: #444; font-size: 0.9rem; user-select: none; } 
 
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
@@ -92,34 +93,32 @@
         .infra-label { font-weight: 900; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; color: #fff; }
 
         /* ==========================================
-           CARDS PADRONIZADOS (Princípios e Avaliações com tamanhos idênticos)
+           CARDS PADRONIZADOS (Princípios e Avaliações)
            ========================================== */
         .mvv-grid, .reviews-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mesma largura mínima */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 20px; 
             margin-bottom: 60px; 
         }
         
         .mvv-card, .review-card { 
             background: #111; 
-            padding: 30px 25px; /* Mesmo espaçamento interno */
+            padding: 30px 25px; 
             border-radius: 16px; 
             border: 1px solid var(--border); 
             display: flex; 
             flex-direction: column; 
-            height: 100%; /* Força todos a terem exatamente a mesma altura */
+            height: 100%; 
             transition: 0.3s; 
         }
 
-        /* Estilos Específicos: Princípios */
         .mvv-card { text-align: center; align-items: center; justify-content: center; }
         .mvv-card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .mvv-card .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
         .mvv-card h4 { color: var(--primary); font-size: 1.3rem; text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
         .mvv-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
-        /* Estilos Específicos: Avaliações */
         .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; width: 100%; }
         .reviewer-avatar { width: 50px; height: 50px; border-radius: 50%; background: #333; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; font-weight: bold; color: #fff; flex-shrink: 0; }
         .reviewer-info h4 { font-size: 1rem; color: #fff; margin-bottom: 2px; }
@@ -141,6 +140,9 @@
         .faq-item.active .faq-question { color: var(--primary); }
         .faq-answer { padding: 0 22px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-muted); }
         .faq-item.active .faq-answer { padding-bottom: 22px; max-height: 200px; }
+        
+        /* Estilo para a chave PIX e destaques dentro das respostas */
+        .highlight-text { color: var(--primary); font-weight: bold; }
 
         footer { background: #050505; text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); color: #555; font-size: 0.85rem; }
 
@@ -154,7 +156,6 @@
             .profile-img { max-width: 180px; }
             .section-title { font-size: 1.6rem; margin: 50px 0 30px; }
             
-            /* Força os botões e grids a ocuparem 100% da tela no celular */
             .links-grid { grid-template-columns: 1fr; }
             .products-grid, .infra-grid, .mvv-grid, .reviews-grid { grid-template-columns: 1fr; }
             
@@ -162,7 +163,6 @@
             .reseller-box h2 { font-size: 1.8rem; }
             .btn-link { font-size: 0.85rem; padding: 14px; }
             
-            /* Ajuste do botão flutuante para não cobrir texto */
             .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 26px; }
         }
     </style>
@@ -219,9 +219,9 @@
         <h2 class="section-title" id="destaques">Nossos Destaques</h2>
         <div class="products-grid">
             <div class="product-card">
-                <img src="fritos.jpg" class="product-img" alt="Salgados Fritos">
+                <img src="revenda.jpg" class="product-img" alt="Salgados Fritos">
                 <div class="product-info">
-                    <h3>Cento de Festa Fritos</h3>
+                    <h3>Salgados Padrão Lanchonete</h3>
                     <p class="product-price">R$ 50,00</p>
                     <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
@@ -246,10 +246,10 @@
             </div>
             
             <div class="product-card">
-                <img src="camarao.jpg" class="product-img" alt="Camarão Empanado">
+                <img src="fritos.jpg" class="product-img" alt="Camarão Empanado">
                 <div class="product-info">
-                    <h3>Camarão Empanado (20un)</h3>
-                    <p class="product-price">R$ 25,00</p>
+                    <h3>Cento Frito</h3>
+                    <p class="product-price">R$ 50,00</p>
                     <a href="/cardapio" class="btn-buy">Ver no Cardápio</a>
                 </div>
             </div>
@@ -348,23 +348,27 @@
             <a href="https://api.whatsapp.com/send/?phone=5521994317184&text=Oi%2C%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="btn-link btn-main" style="display:inline-flex; width: auto; padding: 18px 40px; margin-top: 30px;" target="_blank">Quero Revender</a>
         </section>
 
-        <h2 class="section-title" id="duvidas">Dúvidas Frequentes</h2>
+        <h2 class="section-title" id="duvidas">Informações e Dúvidas</h2>
         <div class="faq-container">
             <div class="faq-item">
-                <div class="faq-question">Qual o pedido mínimo? <span>+</span></div>
-                <div class="faq-answer">Trabalhamos com entregas a partir de R$ XX,00. Consulte a taxa para sua região no cardápio.</div>
+                <div class="faq-question">Qual é o horário de atendimento e pedidos? <span>+</span></div>
+                <div class="faq-answer">
+                    <br><strong>Cardápio Digital:</strong> Todos os dias, das 08h às 14h30.
+                    <br><strong>Loja Física (Retirada):</strong> Seg. a Sex. das 08h às 18h | Sáb. das 08h às 14h.
+                    <br><strong>Delivery (Entrega):</strong> Seg. a Sex. das 08h às 14h30 | Sáb. das 08h às 13h30.<br><br>
+                </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Preciso encomendar com antecedência? <span>+</span></div>
-                <div class="faq-answer">Salgados fritos ou assados têm um tempo de preparo de 15 a 24 horas dependendo da quantidade. Salgados congelados estão disponíveis para pronta entrega.</div>
+                <div class="faq-question">Até que horas posso fazer pedidos para revenda? <span>+</span></div>
+                <div class="faq-answer"><br>Pedidos de revenda são aceitos até às <span class="highlight-text">18h</span>. Pedidos realizados após esse horário podem ser atendidos apenas no dia seguinte, conforme a disponibilidade da fábrica.<br><br></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Qual a validade dos congelados? <span>+</span></div>
-                <div class="faq-answer">Nossos salgados congelados possuem validade de até 90 dias se mantidos na temperatura ideal do freezer (-18ºC).</div>
+                <div class="faq-question">Qual é a forma de pagamento e a Chave PIX? <span>+</span></div>
+                <div class="faq-answer"><br>Aceitamos pagamentos via PIX. A nossa chave é o telefone: <span class="highlight-text">(21) 99431-7184</span>.<br><br></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Como funciona a revenda? <span>+</span></div>
-                <div class="faq-answer">Temos preços diferenciados para pedidos acima de 500 unidades. É ideal para bares, lanchonetes e casas de festas.</div>
+                <div class="faq-question">Onde a fábrica está localizada? <span>+</span></div>
+                <div class="faq-answer"><br>Ficamos na Praça do Comari, em frente à Clínica da Família e próximo ao Centro Esportivo Miécimo da Silva (Campo Grande).<br><br></div>
             </div>
         </div>
     </div>
