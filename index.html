@@ -44,8 +44,11 @@
             height: auto; 
             object-fit: contain; 
             margin-bottom: 15px; 
-            filter: drop-shadow(0 0 25px rgba(255, 192, 4, 0.15)); 
+            filter: drop-shadow(0 0 25px rgba(255, 192, 4, 0.15));
+            transition: 0.3s;
         }
+        /* Efeito bem sutil na logo para dar uma dica de que é clicável */
+        .profile-img:hover { transform: scale(1.02); filter: drop-shadow(0 0 35px rgba(255, 192, 4, 0.25)); }
 
         /* WHATSAPP FLUTUANTE */
         .whatsapp-float {
@@ -73,14 +76,6 @@
         /* TÍTULOS DE SEÇÃO */
         .section-title { font-size: 2rem; font-weight: 900; text-transform: uppercase; text-align: center; margin: 80px 0 40px; color: #fff; position: relative; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 10px auto; border-radius: 2px; }
-
-        /* ==========================================
-           CHAMADA PARA A PÁGINA SOBRE
-           ========================================== */
-        .about-teaser { text-align: center; margin-bottom: 60px; background: #111; padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
-        .about-teaser p { color: #ccc; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.6; }
-        .btn-large { display: inline-block; background: var(--primary); color: #000; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: 900; font-size: 1rem; text-transform: uppercase; transition: 0.3s; }
-        .btn-large:hover { background: #ffcf40; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 192, 4, 0.3); }
 
         /* ==========================================
            PRODUTOS E INFRAESTRUTURA
@@ -140,16 +135,18 @@
         .faq-item.active .faq-question { color: var(--primary); }
         .faq-answer { padding: 0 22px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-muted); }
         .faq-item.active .faq-answer { padding-bottom: 22px; max-height: 200px; }
-        .highlight-text { color: var(--primary); font-weight: bold; }
 
         footer { background: #050505; text-align: center; padding: 60px 20px; border-top: 1px solid var(--border); color: #555; font-size: 0.85rem; }
+        
+        /* Estilo do link secreto no rodapé */
+        .secret-link { color: #555; text-decoration: none; transition: 0.3s; }
+        .secret-link:hover { color: var(--primary); }
 
         @media (max-width: 768px) {
             .top-nav { padding: 10px; gap: 8px; }
             .nav-link { font-size: 0.70rem; }
             .profile-section { padding-top: 20px; }
             .profile-img { max-width: 350px; margin-bottom: 15px; }
-            .about-teaser { padding: 30px 20px; }
             .section-title { font-size: 1.6rem; margin: 50px 0 30px; }
             .links-grid, .products-grid, .infra-grid, .mvv-grid, .reviews-grid { grid-template-columns: 1fr; }
             .reseller-box h2 { font-size: 1.8rem; }
@@ -161,8 +158,6 @@
 
     <nav class="top-nav">
         <a href="#inicio" class="nav-link">Início</a>
-        <span class="nav-separator">|</span>
-        <a href="#sobre" class="nav-link">Sobre</a>
         <span class="nav-separator">|</span>
         <a href="#destaques" class="nav-link">Destaques</a>
         <span class="nav-separator">|</span>
@@ -183,7 +178,9 @@
 
     <div class="container" id="inicio">
         <div class="profile-section">
-            <img src="logo-sabor.png" alt="Sabor Radical" class="profile-img">
+            <a href="sobre.html">
+                <img src="logo-sabor.png" alt="Sabor Radical" class="profile-img">
+            </a>
         </div>
 
         <div class="links-grid">
@@ -194,12 +191,6 @@
             <a href="https://api.whatsapp.com/send/?phone=5521994317184&text=Oi%2C%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="btn-link" target="_blank">WhatsApp</a>
             <a href="https://www.instagram.com/sabor.radical/" class="btn-link" target="_blank">Instagram</a>
             <a href="https://maps.app.goo.gl/t6MPvsQTcBAkusJM8" class="btn-link" target="_blank">Localização</a>
-        </div>
-
-        <h2 class="section-title" id="sobre">Nossa História</h2>
-        <div class="about-teaser">
-            <p>A Sabor Radical é o resultado de anos de dedicação, tradição e a parceria inabalável entre pai e filho. Descubra como transformamos nossa paixão pela qualidade em um compromisso diário com a sua família.</p>
-            <a href="sobre.html" class="btn-large">Conheça Nossa História</a>
         </div>
 
         <h2 class="section-title" id="destaques">Nossos Destaques</h2>
@@ -319,7 +310,7 @@
     <footer>
         <p><strong>Sabor Radical Fábrica de Salgados</strong></p>
         <p>R. Firmino Moreira, 43 - Campo Grande, RJ</p>
-        <p>© 2026 Sabor Radical. Desenvolvido por Mikhail Ayache | Aiex</p>
+        <p><a href="sobre.html" class="secret-link">© 2026 Sabor Radical.</a> Desenvolvido por Mikhail Ayache | Aiex</p>
     </footer>
 
     <script>
