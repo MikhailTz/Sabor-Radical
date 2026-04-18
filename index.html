@@ -75,38 +75,19 @@
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 10px auto; border-radius: 2px; }
 
         /* ==========================================
-           NOVA SEÇÃO: SOBRE NÓS
+           CHAMADA PARA A PÁGINA SOBRE
            ========================================== */
-        .about-box {
-            background: #111;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin-bottom: 60px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .about-content { flex: 1; min-width: 300px; }
-        .about-content h3 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; color: var(--primary); margin-bottom: 20px; }
-        .about-content p { color: #ccc; margin-bottom: 15px; font-size: 1rem; line-height: 1.8; }
-        .about-image { 
-            flex: 0 0 300px; 
-            height: 300px; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid var(--border);
-        }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.5); transition: 0.5s; }
-        .about-image:hover img { filter: grayscale(0); transform: scale(1.05); }
+        .about-teaser { text-align: center; margin-bottom: 60px; background: #111; padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
+        .about-teaser p { color: #ccc; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.6; }
+        .btn-large { display: inline-block; background: var(--primary); color: #000; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: 900; font-size: 1rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-large:hover { background: #ffcf40; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 192, 4, 0.3); }
 
-        /* PRODUTOS E INFRAESTRUTURA */
+        /* ==========================================
+           PRODUTOS E INFRAESTRUTURA
+           ========================================== */
         .products-grid, .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; } 
         .product-card, .infra-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; border: 1px solid var(--border); cursor: pointer; }
         .product-card .product-img, .infra-item img { width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease; filter: brightness(0.6); }
-        
-        .product-card.active .product-img, .infra-item.active img { transform: scale(1.05); filter: brightness(0.2); }
         
         .product-info, .infra-label { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.9)); pointer-events: none; transition: 0.4s; }
         .product-info * { pointer-events: auto; } 
@@ -114,11 +95,23 @@
         .product-price { font-size: 1.3rem; font-weight: 900; color: var(--primary); margin: 0 0 10px 0; }
         
         .item-desc { font-size: 0.85rem; color: #dddddd; margin-bottom: 15px; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; transform: translateY(10px); }
+
+        /* 1. EFEITO HOVER APENAS PARA QUEM USA MOUSE (COMPUTADOR) */
+        @media (hover: hover) and (pointer: fine) {
+            .product-card:hover .product-img, .infra-item:hover img { transform: scale(1.05); filter: brightness(0.2); }
+            .product-card:hover .item-desc, .infra-item:hover .item-desc { max-height: 150px; opacity: 1; transform: translateY(0); }
+        }
+
+        /* 2. EFEITO ACTIVE PARA QUEM USA TOUCH (CELULAR) */
+        .product-card.active .product-img, .infra-item.active img { transform: scale(1.05); filter: brightness(0.2); }
         .product-card.active .item-desc, .infra-item.active .item-desc { max-height: 150px; opacity: 1; transform: translateY(0); }
 
         .btn-buy { display: inline-block; background: var(--primary); color: #000; text-align: center; text-decoration: none; padding: 10px 15px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; border: none; align-self: flex-start; }
-        
-        /* PRINCÍPIOS E AVALIAÇÕES */
+        .btn-buy:hover { background: #ffcf40; transform: translateY(-3px); }
+
+        /* ==========================================
+           PRINCÍPIOS E AVALIAÇÕES
+           ========================================== */
         .mvv-grid, .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
         .mvv-card, .review-card { background: #111; padding: 30px 25px; border-radius: 16px; border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%; }
         .mvv-card { text-align: center; align-items: center; justify-content: center; }
@@ -156,8 +149,7 @@
             .nav-link { font-size: 0.70rem; }
             .profile-section { padding-top: 20px; }
             .profile-img { max-width: 350px; margin-bottom: 15px; }
-            .about-box { padding: 30px 20px; flex-direction: column-reverse; text-align: center; }
-            .about-image { flex: 0 0 250px; width: 100%; height: 250px; }
+            .about-teaser { padding: 30px 20px; }
             .section-title { font-size: 1.6rem; margin: 50px 0 30px; }
             .links-grid, .products-grid, .infra-grid, .mvv-grid, .reviews-grid { grid-template-columns: 1fr; }
             .reseller-box h2 { font-size: 1.8rem; }
@@ -205,15 +197,9 @@
         </div>
 
         <h2 class="section-title" id="sobre">Nossa História</h2>
-        <div class="about-box">
-            <div class="about-content">
-                <h3>Tradição e Parceria</h3>
-                <p>A Sabor Radical nasceu da união de forças entre gerações. Administrada por pai e filho, nossa fábrica em Campo Grande é o resultado de anos de dedicação à excelência e ao respeito pelo paladar carioca.</p>
-                <p>Acreditamos que um salgado perfeito é feito com equilíbrio: a experiência e o cuidado artesanal do meu pai, somados à inovação e tecnologia que busco implementar todos os dias. Juntos, sustentamos não apenas uma empresa, mas um compromisso com a qualidade que chega à mesa da sua família.</p>
-            </div>
-            <div class="about-image">
-                <img src="familia.jpg" alt="História Sabor Radical">
-            </div>
+        <div class="about-teaser">
+            <p>A Sabor Radical é o resultado de anos de dedicação, tradição e a parceria inabalável entre pai e filho. Descubra como transformamos nossa paixão pela qualidade em um compromisso diário com a sua família.</p>
+            <a href="sobre.html" class="btn-large">Conheça Nossa História</a>
         </div>
 
         <h2 class="section-title" id="destaques">Nossos Destaques</h2>
@@ -295,18 +281,37 @@
             <div class="mvv-card"><span class="icon">💎</span><h4>Valores</h4><p>Higiene inegociável, respeito aos prazos e inovação constante nos processos.</p></div>
         </div>
 
+        <section class="reseller-box" id="revenda">
+            <h2>Seja um Revendedor</h2>
+            <p>Seja parceiro da fábrica que mais cresce na Zona Oeste. Preços imbatíveis para atacado e lanchonetes.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5521994317184&text=Oi%2C%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="btn-link btn-main" style="display:inline-flex; width: auto; padding: 18px 40px; margin-top: 30px;" target="_blank">Quero Revender</a>
+        </section>
+
         <h2 class="section-title" id="duvidas">Dúvidas Frequentes</h2>
         <div class="faq-container">
             <div class="faq-item">
-                <div class="faq-question">Horários de Funcionamento <span>+</span></div>
-                <div class="faq-answer">
-                    <br><strong>Loja Física:</strong> Seg. a Sex. das 08h às 18h | Sáb. das 08h às 14h.
-                    <br><strong>Delivery:</strong> Seg. a Sex. das 08h às 14h30 | Sáb. das 08h às 13h30.
-                </div>
+                <div class="faq-question">Pergunta 1 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 1<br><br></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Pagamento e Chave PIX <span>+</span></div>
-                <div class="faq-answer"><br>Aceitamos PIX. A nossa chave é o telefone: <span class="highlight-text">(21) 99431-7184</span>.<br><br></div>
+                <div class="faq-question">Pergunta 2 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 2<br><br></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pergunta 3 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 3<br><br></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pergunta 4 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 4<br><br></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pergunta 5 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 5<br><br></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pergunta 6 <span>+</span></div>
+                <div class="faq-answer"><br>Resposta 6<br><br></div>
             </div>
         </div>
     </div>
@@ -318,29 +323,30 @@
     </footer>
 
     <script>
+        // Lógica do FAQ
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 item.parentElement.classList.toggle('active');
             })
         });
 
-        // SCRIPT CORRIGIDO: TOGGLE INTELIGENTE
-        document.querySelectorAll('.product-card, .infra-item').forEach(card => {
-            card.addEventListener('click', function(e) {
-                if(e.target.closest('.btn-buy')) return;
+        // Lógica dos Cards - Aplica apenas em dispositivos com touch (celular)
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            document.querySelectorAll('.product-card, .infra-item').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if(e.target.closest('.btn-buy')) return;
 
-                // Se o card clicado já estiver ativo, ele apenas remove a classe e fecha
-                if (this.classList.contains('active')) {
-                    this.classList.remove('active');
-                } else {
-                    // Se não estiver ativo, remove de todos os outros e ativa este
-                    document.querySelectorAll('.product-card, .infra-item').forEach(other => {
-                        other.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.product-card, .infra-item').forEach(other => {
+                            other.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
