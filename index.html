@@ -173,6 +173,8 @@
                 radial-gradient(circle at 42% 82%, rgba(255,255,255,0.035), transparent 25%),
                 linear-gradient(180deg, #090909 0%, #0d0d0d 45%, #080808 100%);
             background-attachment: fixed;
+            background-size: 140% 140%;
+            animation: ambient-background 18s ease-in-out infinite alternate;
         }
         body::before {
             content: '';
@@ -187,6 +189,15 @@
             background: rgba(255,192,4,0.045);
             filter: blur(100px);
             transform: translateX(-50%);
+            animation: ambient-glow 12s ease-in-out infinite alternate;
+        }
+        @keyframes ambient-background {
+            0% { background-position: 0% 0%, 100% 45%, 35% 100%, 50% 0%; }
+            100% { background-position: 18% 12%, 82% 60%, 55% 82%, 50% 100%; }
+        }
+        @keyframes ambient-glow {
+            0% { transform: translate(-65%, -8%) scale(0.9); opacity: 0.65; }
+            100% { transform: translate(-35%, 12%) scale(1.15); opacity: 1; }
         }
         .top-nav {
             position: sticky; top: 0; z-index: 1000;
@@ -197,15 +208,19 @@
         }
         .nav-link { color: #c9c9c9; }
         .profile-section {
-            position: relative; margin-top: 22px; padding: 36px 20px 12px; overflow: hidden;
-            background: linear-gradient(145deg, rgba(255,255,255,0.025), rgba(255,192,4,0.025));
-            border: 1px solid rgba(255,255,255,0.05); border-radius: 20px;
+            position: relative; margin-top: 22px; padding: 36px 20px 12px; overflow: visible;
+            background: transparent; border: 0; border-radius: 0;
         }
         .profile-section::before {
-            content: ''; position: absolute; inset: 0; pointer-events: none;
-            background: repeating-linear-gradient(135deg, transparent 0 16px, rgba(255,255,255,0.012) 16px 17px);
+            content: ''; position: absolute; width: 360px; height: 190px; left: 50%; top: 50%; pointer-events: none;
+            border-radius: 50%; background: rgba(255,192,4,0.08); filter: blur(70px);
+            transform: translate(-50%, -50%); animation: logo-glow 7s ease-in-out infinite alternate;
         }
         .profile-img { position: relative; z-index: 1; }
+        @keyframes logo-glow {
+            0% { opacity: 0.45; transform: translate(-54%, -48%) scale(0.88); }
+            100% { opacity: 0.9; transform: translate(-46%, -52%) scale(1.12); }
+        }
         .links-grid { margin-top: 18px; }
         .btn-link {
             min-height: 58px; background: linear-gradient(180deg, #191919, #121212); border-color: #292929;
@@ -248,6 +263,10 @@
         }
         .faq-item:hover, .faq-item.active { border-left-color: var(--primary); transform: translateX(3px); }
         footer { background: linear-gradient(180deg, #080808, #030303); border-top-color: rgba(255,192,4,0.16); }
+
+        @media (prefers-reduced-motion: reduce) {
+            body, body::before, .profile-section::before { animation: none; }
+        }
 
         @media (max-width: 768px) {
             .top-nav { padding: 10px; gap: 8px; }
