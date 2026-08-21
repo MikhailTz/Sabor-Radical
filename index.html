@@ -267,6 +267,9 @@
         /* DESKTOP: 4 CARDS POR LINHA */
         @media (min-width: 1024px) {
             .products-grid, .infra-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .product-card, .infra-item { aspect-ratio: 3 / 4; }
+            .product-info, .infra-label { padding: 18px; }
+            .product-card:hover .item-desc, .infra-item:hover .item-desc { max-height: 220px; }
         }
 
         @media (max-width: 768px) {
