@@ -229,10 +229,6 @@
         .btn-link:hover { border-color: rgba(255,192,4,0.8); }
         .btn-main { background: linear-gradient(135deg, #ffd13b, var(--primary)); box-shadow: 0 10px 28px rgba(255,192,4,0.16); }
         .section-title { letter-spacing: -0.6px; text-wrap: balance; }
-        .section-title::before {
-            content: 'SABOR RADICAL'; display: block; margin-bottom: 7px; color: var(--primary);
-            font-size: 0.68rem; font-weight: 800; letter-spacing: 3px;
-        }
         .section-title::after { width: 74px; height: 3px; box-shadow: 0 0 18px rgba(255,192,4,0.35); }
         .product-card, .infra-item {
             border-color: #303030; border-radius: 10px; background: #111;
@@ -266,6 +262,11 @@
 
         @media (prefers-reduced-motion: reduce) {
             body, body::before, .profile-section::before { animation: none; }
+        }
+
+        /* DESKTOP: 4 CARDS POR LINHA */
+        @media (min-width: 1024px) {
+            .products-grid, .infra-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
