@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor Radical | Fábrica de Salgados Campo Grande - RJ </title>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Sabor Radical",
-      "url": "https://saborradical.com.br/"
+      "url": "https://salgadoscomari.com.br/"
     }
     </script>
     <meta property="og:site_name" content="Sabor Radical" />
-    
+
     <link rel="icon" type="image/png" href="img/icone-aba.png?v=5">
     <link rel="shortcut icon" type="image/png" href="img/icone-aba.png?v=5">
     <link rel="apple-touch-icon" href="img/icone-aba.png?v=5">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        html { scroll-padding-top: 20px; } 
+
+        html { scroll-padding-top: 20px; }
         body { background-color: #0a0a0a; color: #ffffff; line-height: 1.6; }
-        
+
         :root {
             --primary: #ffc004;
             --secondary: #25d366;
@@ -46,18 +46,18 @@
             text-transform: uppercase; transition: 0.3s; letter-spacing: 1px;
         }
         .nav-link:hover { color: var(--primary); }
-        .nav-separator { color: #444; font-size: 0.9rem; user-select: none; } 
+        .nav-separator { color: #444; font-size: 0.9rem; user-select: none; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
         /* HEADER & PERFIL */
-        .profile-section { text-align: center; padding: 30px 0 0 0; } 
-        .profile-img { 
-            width: 100%; 
-            max-width: 450px; 
-            height: auto; 
-            object-fit: contain; 
-            margin-bottom: 15px; 
+        .profile-section { text-align: center; padding: 30px 0 0 0; }
+        .profile-img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
             filter: drop-shadow(0 0 25px rgba(255, 192, 4, 0.15));
         }
 
@@ -72,11 +72,11 @@
         .whatsapp-float:hover { transform: scale(1.1) rotate(5deg); }
 
         /* LINKS RÁPIDOS */
-        .links-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 12px; 
-            margin-bottom: 50px; 
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 50px;
         }
         .btn-link {
             display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -88,10 +88,10 @@
         .btn-link:hover { border-color: var(--primary); background: #1a1a1a; transform: translateY(-3px); }
         .btn-main { background: var(--primary); color: #000; border: none; }
         .btn-main:hover { box-shadow: 0 0 25px rgba(255, 192, 4, 0.4); background: #ffcf40; }
-        .btn-link svg { 
-            width: 22px; height: 22px; 
-            flex-shrink: 0; 
-        } 
+        .btn-link svg {
+            width: 22px; height: 22px;
+            flex-shrink: 0;
+        }
         .icon-whatsapp { fill: #25D366; }
         .icon-location { fill: #EA4335; }
 
@@ -103,17 +103,17 @@
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 10px auto; border-radius: 2px; }
 
         /* PRODUTOS E INFRAESTRUTURA */
-        .products-grid, .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; } 
+        .products-grid, .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .product-card, .infra-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; border: 1px solid var(--border); cursor: pointer; }
         .product-card .product-img, .infra-item img { width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease; filter: brightness(0.6); }
-        
+
         .product-info, .infra-label { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.9)); pointer-events: none; transition: 0.4s; }
-        .product-info * { pointer-events: auto; } 
+        .product-info * { pointer-events: auto; }
         .product-info { justify-content: flex-start; background: linear-gradient(rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.94) 100%); }
         .product-info .item-desc { margin-top: auto; }
         .product-info h3, .infra-label h3 { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; color: #fff; margin-bottom: 5px; line-height: 1.2; }
         .product-price { font-size: 1.3rem; font-weight: 900; color: var(--primary); margin: 0 0 10px 0; }
-        
+
         .item-desc { font-size: 0.85rem; color: #dddddd; margin-bottom: 15px; max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; transform: translateY(10px); }
 
         /* HOVER PC */
@@ -133,9 +133,9 @@
         .mvv-grid, .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
         .mvv-card, .review-card { background: #111; padding: 30px 25px; border-radius: 16px; border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%; transition: 0.3s; }
         .mvv-card { text-align: center; align-items: center; justify-content: center; cursor: pointer; }
-        
+
         .mvv-card .icon { font-size: 3rem; margin-bottom: 20px; display: block; transition: all 0.3s ease; }
-        
+
         .mvv-card:hover .icon, .mvv-card:active .icon {
             text-shadow: 0 0 25px rgba(255, 192, 4, 0.8);
             transform: scale(1.15);
@@ -147,7 +147,7 @@
         .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; width: 100%; }
         .reviewer-avatar { width: 50px; height: 50px; border-radius: 50%; background: #333; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; font-weight: bold; color: #fff; flex-shrink: 0; }
         .reviewer-info h4 { font-size: 1rem; color: #fff; margin-bottom: 2px; }
-        .review-stars { color: #fbbc04; font-size: 1.1rem; letter-spacing: 2px; } 
+        .review-stars { color: #fbbc04; font-size: 1.1rem; letter-spacing: 2px; }
         .review-text { font-size: 0.95rem; color: #ccc; line-height: 1.5; font-style: italic; flex-grow: 1; }
         .google-badge { align-self: flex-end; margin-top: 15px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; font-weight: 600; }
 
@@ -268,13 +268,12 @@
             body, body::before, .profile-section::before { animation: none; }
         }
 
-        /* DESKTOP: TUDO EM UMA ÚNICA FILEIRA */
+        /* DESKTOP: 4 CARDS POR LINHA */
         @media (min-width: 1024px) {
             .products-grid, .infra-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
             .product-card, .infra-item { aspect-ratio: 3 / 4; }
             .product-info, .infra-label { padding: 18px; }
             .product-card:hover .item-desc, .infra-item:hover .item-desc { max-height: 220px; }
-            .mvv-grid, .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
@@ -287,64 +286,23 @@
             .reseller-box h2 { font-size: 1.8rem; }
             .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 26px; }
         }
-
-        /* BARRA DE MARCA — só existe pra abrigar o botão de abrir o menu no
-           celular (nome da loja e ícone do WhatsApp foram removidos daqui).
-           No desktop o menu já fica sempre visível, então a barra some. */
-        .brand-bar {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 20px; background: rgba(8,8,8,0.95); border-bottom: 1px solid var(--border);
-        }
-        @media (min-width: 769px) {
-            .brand-bar { display: none; }
-        }
-        .brand-left { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-logo-icon { width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; }
-        .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-        .brand-name { font-size: 1.15rem; font-weight: 900; letter-spacing: 0.3px; color: #fff; text-transform: uppercase; }
-        .brand-name .accent { color: var(--primary); }
-        .brand-sub { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
-        .brand-right { display: flex; align-items: center; gap: 10px; }
-        .icon-btn {
-            width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center; background: #111;
-            color: #fff; text-decoration: none; cursor: pointer; transition: 0.3s; flex-shrink: 0;
-        }
-        .icon-btn:hover { border-color: var(--primary); }
-        .icon-btn svg { width: 20px; height: 20px; }
-        .nav-toggle { display: none; }
-
-        /* MENU: alinhado à esquerda com sublinhado no item ativo */
-        .top-nav { justify-content: flex-start; }
-        .nav-link { position: relative; padding-bottom: 6px; }
-        .nav-link.active { color: var(--primary); }
-        .nav-link.active::after {
-            content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
-            background: var(--primary); border-radius: 2px;
-        }
-
-        /* HERO EM DUAS COLUNAS — tamanhos fluidos (clamp) em vez de fixos,
-           pra ficar bem apresentável do celular ao desktop sem precisar de
-           uma versão empilhada separada pro mobile. */
-        .hero-section { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(16px, 4vw, 44px); align-items: center; padding: clamp(24px, 6vw, 50px) 0 10px; }
-        .hero-text h1 { font-size: clamp(1.4rem, 4.6vw, 2.9rem); font-weight: 900; line-height: 1.2; margin-bottom: clamp(10px, 2.5vw, 20px); letter-spacing: -0.5px; }
-        .hero-text h1 .accent { color: var(--primary); }
-        .hero-text .hero-desc { color: #cfcfcf; font-size: clamp(0.82rem, 2.3vw, 1.05rem); margin-bottom: clamp(16px, 4vw, 30px); max-width: 480px; }
-        .hero-image { position: relative; display: flex; align-items: center; justify-content: center; padding: clamp(6px, 2vw, 20px); }
-        .hero-image img { width: 100%; max-width: clamp(140px, 42vw, 380px); height: auto; object-fit: contain; display: block; filter: drop-shadow(0 0 30px rgba(255,192,4,0.18)); }
-        .links-grid { margin-top: 0; }
-
     </style>
 </head>
 <body>
 
-    <nav class="top-nav" id="mainNav">
+    <nav class="top-nav">
         <a href="#inicio" class="nav-link">Início</a>
+        <span class="nav-separator">|</span>
         <a href="#destaques" class="nav-link">Destaques</a>
+        <span class="nav-separator">|</span>
         <a href="#infraestrutura" class="nav-link">Infraestrutura</a>
+        <span class="nav-separator">|</span>
         <a href="#principios" class="nav-link">Princípios</a>
+        <span class="nav-separator">|</span>
         <a href="#avaliacoes" class="nav-link">Avaliações</a>
+        <span class="nav-separator">|</span>
         <a href="#revenda" class="nav-link">Revenda</a>
+        <span class="nav-separator">|</span>
         <a href="#duvidas" class="nav-link">Dúvidas</a>
     </nav>
 
@@ -353,34 +311,27 @@
     </a>
 
     <div class="container" id="inicio">
-        <div class="hero-section">
-            <div class="hero-text">
-                <h1>Qualidade e sabor <span class="accent">em cada salgado,</span><br>direto da <span class="accent">nossa fábrica<span class="accent">.</span></span></h1>
-                <p class="hero-desc">Fábrica de salgados para festas, revenda e lanchonetes em <strong>Campo Grande – RJ.</strong></p>
+        <div class="profile-section">
+            <img src="img/logo-sabor.png" alt="Sabor Radical" class="profile-img">
+        </div>
 
-                <div class="links-grid">
-                    <a href="https://pedidos.salgadoscomari.com.br" class="btn-link btn-main" style="grid-column: 1 / -1;">
-                        <svg viewBox="0 0 24 24" fill="#000"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-                        Pedido Online
-                    </a>
-                    <a href="https://api.whatsapp.com/send/?phone=5521994317184&text=Oi%2C%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="btn-link" target="_blank">
-                        <svg class="icon-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        WhatsApp
-                    </a>
-                    <a href="https://www.instagram.com/sabor.radical/" class="btn-link" target="_blank">
-                        <svg viewBox="0 0 24 24"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FEDA75"/><stop offset="25%" stop-color="#FA7E1E"/><stop offset="50%" stop-color="#D62976"/><stop offset="75%" stop-color="#962FBF"/><stop offset="100%" stop-color="#4F5BD5"/></linearGradient></defs><path fill="url(#instagram-gradient)" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-                        Instagram
-                    </a>
-                    <a href="https://maps.app.goo.gl/t6MPvsQTcBAkusJM8" class="btn-link" target="_blank">
-                        <svg class="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-                        Localização
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="img/logo-sabor.png" alt="Sabor Radical">
-            </div>
+        <div class="links-grid">
+            <a href="https://pedidos.salgadoscomari.com.br" class="btn-link btn-main" style="grid-column: 1 / -1;">
+                <svg viewBox="0 0 24 24" fill="#000"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                Cardápio & Pedido Online
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5521994317184&text=Oi%2C%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" class="btn-link" target="_blank">
+                <svg class="icon-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                WhatsApp
+            </a>
+            <a href="https://www.instagram.com/sabor.radical/" class="btn-link" target="_blank">
+                <svg viewBox="0 0 24 24"><defs><linearGradient id="instagram-gradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FEDA75"/><stop offset="25%" stop-color="#FA7E1E"/><stop offset="50%" stop-color="#D62976"/><stop offset="75%" stop-color="#962FBF"/><stop offset="100%" stop-color="#4F5BD5"/></linearGradient></defs><path fill="url(#instagram-gradient)" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                Instagram
+            </a>
+            <a href="https://maps.app.goo.gl/t6MPvsQTcBAkusJM8" class="btn-link" target="_blank">
+                <svg class="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Localização
+            </a>
         </div>
 
         <h2 class="section-title" id="destaques">Nossos Destaques</h2>
@@ -561,7 +512,7 @@
                     <p>Aceitamos Dinheiro, PIX e Cartão.<br><em>(Obs: Para salgados de revenda, há acréscimo das taxas da máquina: Débito 0,75% e Crédito 2,69%).</em></p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Qual a validade e como devo armazenar os produtos? <span>+</span></div>
                 <div class="faq-answer">
@@ -590,33 +541,6 @@
                 item.parentElement.classList.toggle('active');
             })
         });
-
-        // Menu mobile (hamburguer)
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
-            mainNav.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => mainNav.classList.remove('open'));
-            });
-        }
-
-        // Scrollspy: sublinha o item do menu correspondente à seção visível
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-        if (sections.length) {
-            const spyObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-                        });
-                    }
-                });
-            }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-            sections.forEach(section => spyObserver.observe(section));
-        }
 
         if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
             document.querySelectorAll('.product-card, .infra-item').forEach(card => {
